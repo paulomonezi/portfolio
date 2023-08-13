@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Text, useColorModeValue } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { RiCodeSSlashFill, RiCodeBoxFill } from 'react-icons/ri'
 
 const LogoBox = styled.span`
   font-weight: bold;
@@ -12,26 +13,25 @@ const LogoBox = styled.span`
   line-height: 20px;
   padding: 10px;
 
-  &hover img {
-    transform: rotate(20deg);
+  &:hover svg {
+    transform: rotate(15deg);
+    transition: transform 0.3s ease;
   }
 `
 
 const Logo = () => {
-  const footPrintImg = `/images/footprint$('', '-dark')}.png`
-
   return (
     <Link href="/">
       <LogoBox>
-        <Image src={footPrintImg} width={20} height={20} alt="logo" />
-        <Text
-          color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-          fontFamily="M PLUS Rounded 1c"
-          fontWeight="bold"
-          ml={3}
-        >
-          Paulo Monezi
-        </Text>
+          <RiCodeSSlashFill />
+          <Text
+            color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+            fontFamily="M PLUS Rounded 1c"
+            fontWeight="bold"
+            ml={1}
+          >
+            Paulo Monezi
+          </Text>
       </LogoBox>
     </Link>
   )
