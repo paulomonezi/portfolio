@@ -1,13 +1,21 @@
-import { Container, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Divider, Box } from '@chakra-ui/react'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 
-import thumbnailTeste from '../public/images/projects/beach-resort-1.png'
+import thumbnailTeste from '../public/images/projects/thumbnails/beach-thumb.png'
+import ThumbBashingLilMonsters from '../public/images/projects/thumbnails/bashing-thumb.png'
+import ThumbFinancialControl from '../public/images/projects/thumbnails/financial-thumb.png'
+import ThumbGithubSearcher from '../public/images/projects/thumbnails/github-searcher-thumb.png'
 import Layout from '../components/layouts/article'
 
 const Projects = () => {
   return (
-    <Layout>
+    <Layout title="Projects">
+      <Container>
+        <Box display="flex" alignItems="center" justifyContent="center" h={200}>
+          PLACE HOLDER GRANDÃO
+        </Box>
+      </Container>
       <Container>
         <Heading as="h3" fontSize={20} mb={4}>
           Projects
@@ -23,26 +31,30 @@ const Projects = () => {
             </WorkGridItem>
           </Section>
           <Section delay={0.3}>
-            <WorkGridItem id="bashing-lil-monsters" title="teste2" thumbnail={thumbnailTeste}>
-              Digdjoy popoy
+            <WorkGridItem
+              id="bashing-lil-monsters"
+              title="Bashing Li'l Monsters"
+              thumbnail={ThumbBashingLilMonsters}
+            >
+              Nostalgic web game
             </WorkGridItem>
           </Section>
           <Section delay={0.4}>
             <WorkGridItem
-              id="test51"
-              title="AUHGUAHE"
-              thumbnail={thumbnailTeste}
+              id="react-financial-control"
+              title="React Financial Control"
+              thumbnail={ThumbFinancialControl}
             >
-              tututupá
+              Financial web application
             </WorkGridItem>
           </Section>
           <Section delay={0.4}>
             <WorkGridItem
-              id="test51"
-              title="AUHGUAHE"
-              thumbnail={thumbnailTeste}
+              id="github-searcher"
+              title="Github Seacher"
+              thumbnail={ThumbGithubSearcher}
             >
-              tututupá
+              A searcher app built with GitHub API
             </WorkGridItem>
           </Section>
         </SimpleGrid>

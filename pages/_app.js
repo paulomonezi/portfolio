@@ -4,7 +4,7 @@ import Fonts from '../components/fonts'
 import theme from '../lib/theme'
 import { AnimatePresence } from 'framer-motion'
 
-const Website = ({ Component, pageProps, router }) => {
+const App = ({ Component, pageProps, router }) => {
   return (
     <ChakraProvider theme={theme}>
       <Fonts />
@@ -17,4 +17,5 @@ const Website = ({ Component, pageProps, router }) => {
   )
 }
 
-export default Website
+export default App
+
