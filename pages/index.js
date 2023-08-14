@@ -19,9 +19,14 @@ import { BioSection, BioYear } from '../components/bio'
 import { GridItem } from '../components/grid-item'
 import { IoLogoGithub, IoLogoLinkedin, IoLogoWhatsapp } from 'react-icons/io5'
 
-const Page = () => {
+const Home = () => {
   return (
     <Layout>
+      <Container>
+        <Box display='flex' alignItems='center' justifyContent='center' h={200}>
+          PLACE HOLDER GRANDÃO
+        </Box>
+      </Container>
       <Container>
         <Box
           borderRadius="lg"
@@ -41,18 +46,19 @@ const Page = () => {
           </Box>
           <Box flexShrink={0} mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
             <Image
+              w={100}
               borderColor="whiteAlpha.800"
               borderWidth={2}
               borderStyle="solid"
               display="inline-block"
               borderRadius="full"
-              src="/images/placeholder.png"
+              src="/images/cybercapy.jpeg"
               alt="Profile Image"
             ></Image>
           </Box>
         </Box>
         <Section delay={0.1}>
-          <Heading as="h3" variant="section-title">
+          <Heading as="h3" variant="section-title" pb={5}>
             Work
           </Heading>
           <Paragraph>
@@ -65,10 +71,10 @@ const Page = () => {
             with the release of Letraset sheets containing Lorem Ipsum passages,
             and more recently with desktop publishing software like Aldus
             PageMaker including versions of Lorem Ipsum.
-            <NextLink href="/works/test">test</NextLink>
+            <NextLink href="/projects/test">test</NextLink>
           </Paragraph>
           <Box align="center" my={4}>
-            <NextLink href="/works">
+            <NextLink href="/projects">
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
                 My Portfolio
               </Button>
@@ -94,11 +100,12 @@ const Page = () => {
           </Heading>
           <List>
             <ListItem>
-              <NextLink
-                href="https://github.com/paulomonezi"
-                target="_blank"
-              >
-                <Button variant="ghost" colorScheme='teal' leftIcon={<Icon as={IoLogoGithub}/>}> 
+              <NextLink href="https://github.com/paulomonezi" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoGithub} />}
+                >
                   /paulomonezi
                 </Button>
               </NextLink>
@@ -108,7 +115,11 @@ const Page = () => {
                 href="https://www.linkedin.com/in/paulo-monezi"
                 target="_blank"
               >
-                <Button variant="ghost" colorScheme='teal' leftIcon={<Icon as={IoLogoLinkedin}/>}> 
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoLinkedin} />}
+                >
                   /paulo-monezi
                 </Button>
               </NextLink>
@@ -118,7 +129,11 @@ const Page = () => {
                 href="https://api.whatsapp.com/send?phone=5565996697438&text=Hi%2C%20I%20would%20like%20to%20get%20in%20touch!%3A)"
                 target="_blank"
               >
-                <Button variant="ghost" colorScheme='teal' leftIcon={<Icon as={IoLogoWhatsapp}/>}> 
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoWhatsapp} />}
+                >
                   paulomonezi
                 </Button>
               </NextLink>
@@ -130,4 +145,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default Home

@@ -2,20 +2,24 @@ import { Container, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 
-import thumbnailTeste from '../public/images/projects/teste.png'
+import thumbnailTeste from '../public/images/projects/beach-resort-1.png'
 import Layout from '../components/layouts/article'
 
-const Works = () => {
+const Projects = () => {
   return (
     <Layout>
       <Container>
         <Heading as="h3" fontSize={20} mb={4}>
-          Works
+          Projects
         </Heading>
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section>
-            <WorkGridItem id="test" title="TESTE1" thumbnail={thumbnailTeste}>
-              Testingo 1
+            <WorkGridItem
+              id="beach-resort"
+              title="Beach Resort"
+              thumbnail={thumbnailTeste}
+            >
+              A react-built room rental app
             </WorkGridItem>
           </Section>
           <Section delay={0.3}>
@@ -79,4 +83,4 @@ const Works = () => {
   )
 }
 
-export default Works
+export default Projects

@@ -17,32 +17,36 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 
-const LinkItem = ({ href, path, children }) => {
+const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
-  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
+  const inactiveColor = useColorModeValue('gray.800', 'whiteAlpha.900')
   return (
-    <NextLink href={href}>
-      <span
-        p={2}
-        bg={active ? 'glassTeal' : undefined}
-        color={active ? '#202023' : inactiveColor}
-      >
-        {children}
-      </span>
-    </NextLink>
+    <Link
+      as={NextLink}
+      href={href}
+      scroll={false}
+      p={2}
+      bg={active ? '#88ccca' : undefined}
+      color={active ? '#202023' : inactiveColor}
+      target={target}
+      {...props}
+    >
+      {children}
+    </Link>
   )
 }
 
 const Navbar = props => {
   const { path } = props
+
   return (
     <Box
       position="fixed"
       as="nav"
       w="100%"
       bg={useColorModeValue('#ffffff40', '#20202380')}
-      style={{ backdropFilter: 'blur(10px' }}
-      zIndex={1}
+      css={{ backdropFilter: 'blur(10px)' }}
+      zIndex={2}
       {...props}
     >
       <Container
@@ -64,10 +68,10 @@ const Navbar = props => {
           width={{ base: 'full', md: 'auto' }}
           alignItems="center"
           flexGrow={1}
-          mt={{ base: 4, md: 0 }} //NMD HERE
+          mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/works" path={path}>
-            Works
+          <LinkItem href="/projects" path={path}>
+            Projects
           </LinkItem>
           <LinkItem href="/posts" path={path}>
             Posts
@@ -84,16 +88,16 @@ const Navbar = props => {
                 aria-label="Options"
               />
               <MenuList>
-                <MenuItem as={Link} href="/posts">
+                <MenuItem as={NextLink} href="/posts">
                   About
                 </MenuItem>
-                <MenuItem as={Link} href="/works">
-                  Works
+                <MenuItem as={NextLink} href="/projects">
+                  Projects
                 </MenuItem>
-                <MenuItem as={Link} href="/posts">
+                <MenuItem as={NextLink} href="/posts">
                   Posts
                 </MenuItem>
-                <MenuItem as={Link} href="/">
+                <MenuItem as={NextLink} href="/">
                   View Source
                 </MenuItem>
               </MenuList>
