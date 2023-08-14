@@ -10,7 +10,7 @@ import { Title, WorkImage, Meta } from '../../components/project'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
 
-const Work = () => (
+const Project = () => (
   <Layout title="beach-resort">
     <Container>
       <Title>
@@ -48,4 +48,4 @@ const Work = () => (
   </Layout>
 )
 
-export default Work
+export default Project

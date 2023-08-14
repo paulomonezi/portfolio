@@ -23,7 +23,7 @@ const Projects = () => {
             </WorkGridItem>
           </Section>
           <Section delay={0.3}>
-            <WorkGridItem id="test2" title="teste2" thumbnail={thumbnailTeste}>
+            <WorkGridItem id="bashing-lil-monsters" title="teste2" thumbnail={thumbnailTeste}>
               Digdjoy popoy
             </WorkGridItem>
           </Section>
