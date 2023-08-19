@@ -5,7 +5,7 @@ import {Container, Box} from '@chakra-ui/react'
 const Contact = () => (
   <Layout title="contact">
     <Container>
-      <Box>
+      <Box align="center" opacity={0.4} py={20} fontSize="sm">
         <ContactForm/>
       </Box>
     </Container>

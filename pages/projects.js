@@ -59,37 +59,6 @@ const Projects = () => {
           </Section>
         </SimpleGrid>
         <Divider my={6} />
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          <Section delay={0.5}>
-            <WorkGridItem id="test1" title="TESTE1" thumbnail={thumbnailTeste}>
-              Testingo 1
-            </WorkGridItem>
-          </Section>
-          <Section delay={0.5}>
-            <WorkGridItem id="test2" title="teste2" thumbnail={thumbnailTeste}>
-              Digdjoy popoy
-            </WorkGridItem>
-          </Section>
-          <Section delay={0.5}>
-            <WorkGridItem
-              id="test51"
-              title="AUHGUAHE"
-              thumbnail={thumbnailTeste}
-            >
-              tututupá
-            </WorkGridItem>
-          </Section>
-          <Section delay={0.5}>
-            <WorkGridItem
-              id="test51"
-              title="AUHGUAHE"
-              thumbnail={thumbnailTeste}
-            >
-              tututupá
-            </WorkGridItem>
-          </Section>
-        </SimpleGrid>
-        <Divider my={6} />
       </Container>
     </Layout>
   )

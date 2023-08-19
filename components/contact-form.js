@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
+import { Box, Input, Textarea, Button } from '@chakra-ui/react'
 
-const FORM_ENDPOINT = "https://public.herotofu.com/v1/dd028110-3a69-11ee-a150-c96f258ec0cc"; // TODO - update to the correct endpoint
+const FORM_ENDPOINT =
+  'https://public.herotofu.com/v1/dd028110-3a69-11ee-a150-c96f258ec0cc' // herotofu free tier url
 
 const ContactForm = () => {
-  const [submitted, setSubmitted] = useState(false);
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const [submitted, setSubmitted] = useState(false)
+  const handleSubmit = e => {
+    e.preventDefault()
 
-    const inputs = e.target.elements;
-    const data = {};
+    const inputs = e.target.elements
+    const data = {}
 
     for (let i = 0; i < inputs.length; i++) {
       if (inputs[i].name) {
-        data[inputs[i].name] = inputs[i].value;
+        data[inputs[i].name] = inputs[i].value
       }
     }
 
@@ -20,22 +22,21 @@ const ContactForm = () => {
       method: 'POST',
       headers: {
         Accept: 'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(data)
     })
-      .then((response) => {
+      .then(response => {
         if (!response.ok) {
-          throw new Error('Form response was not ok');
+          throw new Error('Form response was not ok')
         }
 
-        setSubmitted(true);
+        setSubmitted(true)
       })
-      .catch((err) => {
-        // Submit the form manually
-        e.target.submit();
-      });
-  };
+      .catch(err => {
+        e.target.submit()
+      })
+  }
 
   if (submitted) {
     return (
@@ -43,17 +44,13 @@ const ContactForm = () => {
         <div className="text-2xl">Thank you!</div>
         <div className="text-md">We'll be in touch soon.</div>
       </>
-    );
+    )
   }
 
   return (
-    <form
-      action={FORM_ENDPOINT}
-      onSubmit={handleSubmit}
-      method="POST"
-    >
+    <form action={FORM_ENDPOINT} onSubmit={handleSubmit} method="POST">
       <div className="pt-0 mb-3">
-        <input
+        <Input
           type="text"
           placeholder="Your name"
           name="name"
@@ -62,7 +59,7 @@ const ContactForm = () => {
         />
       </div>
       <div className="pt-0 mb-3">
-        <input
+        <Input
           type="email"
           placeholder="Email"
           name="email"
@@ -71,7 +68,7 @@ const ContactForm = () => {
         />
       </div>
       <div className="pt-0 mb-3">
-        <textarea
+        <Textarea
           placeholder="Your message"
           name="message"
           className="focus:outline-none focus:ring relative w-full px-3 py-3 text-sm text-gray-600 placeholder-gray-400 bg-white border-0 rounded shadow outline-none"
@@ -79,15 +76,15 @@ const ContactForm = () => {
         />
       </div>
       <div className="pt-0 mb-3">
-        <button
+        <Button
           className="active:bg-blue-600 hover:shadow-lg focus:outline-none px-6 py-3 mb-1 mr-1 text-sm font-bold text-white uppercase transition-all duration-150 ease-linear bg-blue-500 rounded shadow outline-none"
           type="submit"
         >
           Send a message
-        </button>
+        </Button>
       </div>
     </form>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm

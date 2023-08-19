@@ -16,14 +16,14 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
-import { GridItem } from '../components/grid-item'
 import { IoLogoGithub, IoLogoLinkedin, IoLogoWhatsapp } from 'react-icons/io5'
+import Footer from '../components/footer'
 
 const Home = () => {
   return (
     <Layout>
       <Container>
-        <Box display='flex' alignItems='center' justifyContent='center' h={200}>
+        <Box display="flex" alignItems="center" justifyContent="center" h={200}>
           PLACE HOLDER GRANDÃO
         </Box>
       </Container>
@@ -140,6 +140,7 @@ const Home = () => {
             </ListItem>
           </List>
         </Section>
+        <Footer />
       </Container>
     </Layout>
   )
