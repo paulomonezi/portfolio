@@ -1,3 +1,5 @@
+import '../i18n'
+import { useTranslation } from 'react-i18next';
 import NextLink from 'next/link'
 import {
   Container,
@@ -20,11 +22,20 @@ import { IoLogoGithub, IoLogoLinkedin, IoLogoWhatsapp } from 'react-icons/io5'
 import Footer from '../components/footer'
 
 const Home = () => {
+  const lngs = [
+    { code: "en", native: "English" },
+    { code: "ptBR", native: "Brazilian Portuguese" },
+  ];
+  const { t, i18n } = useTranslation();
+  const handleTrans = (code) => {
+    i18n.changeLanguage(code);
+  };
   return (
+    
     <Layout>
       <Container>
-        <Box display="flex" alignItems="center" justifyContent="center" h={200}>
-          PLACE HOLDER GRANDÃO
+        <Box display="flex" alignItems="center" justifyContent="center" h={200} onClick={handleTrans}>
+          {t('Welcome to React')}
         </Box>
       </Container>
       <Container>
